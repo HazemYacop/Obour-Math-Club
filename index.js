@@ -1,3 +1,4 @@
+import path from 'node:path';
 import express from "express";
 import mailchimp from "@mailchimp/mailchimp_marketing";
 import nodemailer from "nodemailer";
@@ -29,7 +30,7 @@ const port = process.env.PORT || 3000;
 
 app.set("views", "./views");
 app.set("view engine", "ejs");
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", async (req, res, next) => {
