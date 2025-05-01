@@ -29,6 +29,7 @@
   font-family: "Basic", sans-serif;
   font-size: 1.25vw;
   max-width: 80vw;
+  text-align: justify;
 }
 
 .lecture-video {
