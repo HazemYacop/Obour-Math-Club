@@ -1,0 +1,133 @@
+.research-cards {
+  flex-direction: column;
+  gap: 3vh;
+}
+
+.research-card {
+  background-color: #fff;
+  border-radius: 0.5vw;
+  padding: 2vh 2vw;
+  justify-content: space-between;
+  width: 80vw;
+  transition: 0.2s;
+}
+
+.research-card:hover {
+  transform: translateY(-1vh);
+}
+
+.research-titles {
+  padding-left: 2vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: "Barlow", sans-serif;
+  color: var(--secondary);
+  border-left: 0.2vw solid var(--secondary);
+  padding-left: 2vw;
+  margin-left: 2vw;
+  height: 100%;
+}
+
+.research-heading {
+  font-size: 2.08vw;
+  font-weight: 700;
+}
+
+.research-description,
+.research-keywords {
+  margin-top: 3vh;
+  font-size: 1vw;
+  font-weight: 400;
+  color: var(--secondary);
+  width: 80%;
+}
+
+.research-thumbnail {
+  width: 25vw;
+  border-radius: 0.5vw;
+}
+
+@media (max-width: 1400px) {
+  .section-titles {
+    margin-top: 8vh;
+  }
+  .research-card {
+    padding: 2vh 3vw;
+    width: 50vw;
+    border-radius: 1vw;
+  }
+  .research-card a {
+    flex-direction: column;
+    align-items: center;
+    width: 50vw;
+    margin: 0 auto;
+  }
+  .research-thumbnail {
+    width: 50vw;
+    margin-bottom: 2.5vh;
+  }
+  .research-titles {
+    border-left: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  .research-heading {
+    font-size: 3vw;
+    text-decoration: underline;
+  }
+  .research-description,
+  .research-keywords {
+    font-size: 2vw;
+    width: 100%;
+    margin-top: 2vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .research-card {
+    padding: 4vh 4vw;
+    width: 60vw;
+    border-radius: 1vw;
+  }
+  .research-card a {
+    width: 60vw;
+  }
+  .research-heading {
+    font-size: 4vw;
+    text-decoration: underline;
+  }
+  .research-thumbnail {
+    width: 60vw;
+  }
+  .research-titles {
+    width: 60vw;
+  }
+  .research-description,
+  .research-keywords {
+    font-size: 3vw;
+    text-align: justify;
+  }
+}
+
+@media (max-width: 480px) {
+  .research-card {
+    width: 80vw;
+    padding: 2vh 4vw;
+  }
+  .research-thumbnail {
+    width: 80vw;
+  }
+  .research-heading {
+    font-size: 6.2vw;
+  }
+  .research-titles {
+    width: 80vw;
+  }
+  .research-description,
+  .research-keywords {
+    font-size: 4.2vw;
+    text-align: justify;
+  }
+}

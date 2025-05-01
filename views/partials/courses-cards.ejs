@@ -1,0 +1,26 @@
+<div class="courses-container centered">
+  <div class="courses-cards">
+    <% courses.forEach((c, i) => { %>
+    <div class="course-card centered">
+      <img
+        src="/assets/course-<%= i + 1 %>-thumbnail.png"
+        alt="course-<%= i + 1 %>-thumbnail"
+        class="course-thumbnail"
+      />
+
+      <hr class="course-thumbnail-separator" />
+
+      <div class="course-titles centered">
+        <h3 class="course-heading"><%= c.title %></h3>
+        <% if (c.description) { %>
+          <h4 class="course-description"><%= c.description %></h4>
+        <% } %>
+      </div>
+
+      <a href="/olympiads/<%= c.slug %>">
+        <button class="super-btn course-btn">Get Started</button>
+      </a>      
+    </div>
+    <% }) %>
+  </div>
+</div>

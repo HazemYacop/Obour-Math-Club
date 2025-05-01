@@ -1,0 +1,11 @@
+.section-titles {
+    margin-top: 12vh;
+}
+
+.blogs-cards {
+    margin: 9vh 0 15vh;
+}
+
+.blog-card {
+    box-shadow: 0.1vw 0.1vw 1vw 0.1vw rgba(0, 0, 0, 0.25);
+}

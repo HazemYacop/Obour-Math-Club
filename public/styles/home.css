@@ -1,0 +1,239 @@
+.intro-section {
+  gap: 1vh;
+  margin-top: 5vh;
+}
+
+.intro-titles {
+  flex-direction: column;
+  text-align: center;
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+#intro-heading {
+  font-size: 4vw;
+  font-weight: bolder;
+  color: var(--secondary);
+}
+
+#intro-subheading {
+  font-size: 3vw;
+  font-weight: 400;
+  color: var(--primary);
+}
+
+#intro-description,
+.caption {
+  font-family: "Basic", sans-serif;
+  font-size: 0.9vw;
+  width: 55vw;
+  margin-top: 3vh;
+  text-align: center;
+}
+
+.caption {
+  margin-top: 1vh;
+}
+
+.events-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 3vh;
+}
+
+.events-track {
+  display: flex;
+  gap: 5vw;
+  width: calc(45vw * 6);
+  animation: scroll 12s linear infinite;
+  padding: 5vh 0;
+}
+
+.event-track > img {
+  width: 40vw;
+  height: 45vh;
+}
+
+.event-card {
+  display: block;
+  width: 40vw;
+  height: 45vh;
+  border-radius: 0.5vw;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: 0.3vw 0.3vw 2vw 0.1vw rgba(0, 0, 0, 0.25);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.blogs-section {
+  background-color: var(--blue_bg);
+  position: relative;
+  padding-top: 15vh;
+  gap: 6vh;
+  padding-bottom: 15vh;
+}
+
+.academics-section {
+  flex-direction: column;
+  min-height: 70vh;
+  gap: 7vh;
+}
+
+.courses-section,
+.researches-section {
+  background-color: var(--blue_bg);
+  position: relative;
+  gap: 10vh;
+  padding-bottom: 6vh;
+}
+
+.researches-section {
+  padding-bottom: 12vh;
+}
+
+.courses-section {
+  background-color: var(--blue_bg);
+  position: relative;
+  padding-top: 17vh;
+  gap: 10vh;
+}
+
+.contact-section {
+  padding: 15vh 0;
+}
+
+@media (max-width: 1400px) {
+  #intro-heading {
+    font-size: 7vw;
+  }
+  #intro-subheading {
+    font-size: 5vw;
+  }
+  #intro-description,
+  .caption {
+    font-size: 2.9vw;
+    width: 80vw;
+  }
+
+  .events-track {
+    gap: 5vw;
+    width: calc(75vw * 6);
+  }
+  .event-card {
+    width: 70vw;
+    height: 30vh;
+  }
+  .event-card > img {
+    width: 70vw;
+    height: 30vh;
+  }
+  .caption {
+    display: none;
+  }
+  .no-bg-btn {
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-section {
+    margin-top: 8vh;
+  }
+  #intro-heading {
+    font-size: 7vw;
+  }
+  #intro-subheading {
+    font-size: 5vw;
+  }
+  #intro-description,
+  .caption {
+    font-size: 2.8vw;
+    width: 85vw;
+  }
+  .events-track {
+    gap: 5vw;
+    width: calc(70vw * 6);
+  }
+  .event-card {
+    width: 65vw;
+    height: 30vh;
+  }
+  .event-card > img {
+    width: 65vw;
+    height: 30vh;
+  }
+  .blogs-section {
+    padding-top: 10vh;
+    padding-bottom: 12vh;
+    gap: 8vh;
+  }
+  .courses-section {
+    padding-top: 12vh;
+    padding-bottom: 8vh;
+    gap: 8vh;
+  }
+  .researches-section {
+    padding-bottom: 10vh;
+  }
+  .academics-section {
+    gap: 5vh;
+  }
+  .contact-section {
+    padding: 10vh 0;
+  }
+  .no-bg-btn {
+    font-size: 4vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-section {
+    gap: 3vh;
+    margin-top: 10vh;
+  }
+  .intro-titles {
+    gap: 2vh;
+  }
+  #intro-heading {
+    font-size: 12vw;
+  }
+  #intro-subheading {
+    font-size: 7vw;
+  }
+  #intro-description {
+    font-size: 4vw;
+    width: 85%;
+    text-align: justify;
+  }
+
+  .events-track {
+    gap: 5vw;
+    width: calc(120vw * 6);
+  }
+  .event-card {
+    width: 115vw;
+    height: 35vh;
+  }
+  .event-card > img {
+    width: 115vw;
+    height: 35vh;
+  }
+
+  .blogs-section,
+  .courses-section,
+  .researches-section {
+    gap: 6vh;
+  }
+
+  .no-bg-btn p {
+    font-size: 4.5vw;
+  }
+}

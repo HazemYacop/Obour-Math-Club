@@ -1,0 +1,11 @@
+.section-titles {
+    margin-top: 12vh;
+}
+
+.research-cards {
+    margin: 9vh 0 15vh;
+}
+
+.research-card {
+    box-shadow: 0.1vw 0.1vw 1vw 0.1vw rgba(0, 0, 0, 0.25);
+}

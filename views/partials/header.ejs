@@ -1,0 +1,94 @@
+<div class="navbar-container centered">
+  <div class="navbar centered">
+    <a href="/"><img src="/assets/logo.png" alt="logo" id="nav-logo" /></a>
+
+    <ul class="nav-items centered">
+      <a href="https://chat.whatsapp.com/GXl6uJtUNkF6FCyUUGQjB" id="nav-join-us"><li>Join Us</li></a>
+      <a href="/academics"><li>Academics</li></a>
+      <a href="/olympiads"><li>Olympiads</li></a>
+      <a href="/researches"><li>Researches</li></a>
+      <a href="/blogs"><li>Blogs</li></a>
+      <a href="/about-us"><li>About&nbsp;Us</li></a>
+      <a href="/contact-us"><li>Contact&nbsp;Us</li></a>
+    </ul>
+
+    <a href="https://chat.whatsapp.com/GXl6uJtUNkF6FCyUUGQjBf" target="_blank">
+      <button id="join-us" class="primary-btn centered">
+        <p>Join&nbsp;Us</p>
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </a>
+
+    <button class="hamburger" aria-label="Menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+</div>
+
+<div class="header centered">
+  <div class="hero-content centered">
+    <div class="heading-container centered">
+      <% if (!locals.pageTitle) { %>
+      <div class="icons-row centered">
+        <img
+          src="/assets/icons/fluent_math-format-professional-24-filled.svg"
+        />
+        <img src="/assets/icons/fluent_math-formula-16-filled.svg" />
+        <img src="/assets/icons/carbon_math-curve.svg" />
+        <img src="/assets/icons/mdi_math-log.svg" />
+        <img src="/assets/icons/tabler_math-min.svg" />
+        <img src="/assets/icons/tabler_math-max.svg" />
+        <img src="/assets/icons/mynaui_math.svg" />
+      </div>
+
+      <div class="headline-container centered">
+        <div class="icons-column centered">
+          <img src="/assets/icons/ooui_mathematics-display-block.svg" />
+          <img src="/assets/icons/mdi_math-integral.svg" />
+          <img src="/assets/icons/mdi_math-cos.svg" />
+        </div>
+
+        <h1 id="headline">
+          Obour <span class="highlighted">Math</span><br />Club&nbsp;Website
+        </h1>
+
+        <div class="icons-column centered">
+          <img src="/assets/icons/tabler_math.svg" />
+          <img src="/assets/icons/simple-icons_sagemath.svg" />
+          <img src="/assets/icons/mdi_math-sin.svg" />
+        </div>
+      </div>
+
+      <img src="/assets/icons/heading-underline.svg" />
+
+      <div class="cta-btns centered">
+        <a href="/olympiads"
+          ><button id="browse-courses-btn" class="primary-btn">
+            Browse&nbsp;Our&nbsp;Courses
+          </button></a
+        >
+        <a href="/blogs"
+          ><button class="no-bg-btn centered">
+            <p>Explore&nbsp;Blogs</p>
+            <i class="fa-solid fa-arrow-right no-bg-btn-arrow"></i></button
+        ></a>
+      </div>
+      <% } else { %>
+      <h1 id="headline"><%= locals.pageTitle %></h1>
+      <% } %>
+    </div>
+  </div>
+
+  <%- include('./down-slide.ejs') %>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const burger = document.querySelector(".hamburger");
+    const nav = document.querySelector(".nav-items");
+    burger.addEventListener("click", () => {
+      burger.classList.toggle("active");
+      nav.classList.toggle("show");
+    });
+  });
+</script>

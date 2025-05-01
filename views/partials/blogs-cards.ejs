@@ -1,0 +1,23 @@
+<ul class="blogs-cards centered">
+    <% blogs.forEach(b => { %>
+      <li class="blog-card centered">
+        <a href="/blogs/<%= b.slug %>">
+          <div class="blog-intro">
+            <i class="<%= b.icon_class %> blog-icon"></i>
+            <div class="blog-titles centered">
+              <h2 class="blog-heading"><%= b.title %></h2>
+              <h2 class="blog-subheading"><%= b.subtitle %></h2>
+              <p  class="blog-description"><%= b.description %></p>
+            </div>
+          </div>
+  
+          <div class="blog-thumbnail centered">
+            <div class="blog-thumbnail-container centered">
+              <img src="<%= b.thumbnail %>" alt="thumbnail">
+            </div>
+          </div>
+        </a>
+      </li>
+    <% }) %>
+  </ul>
+  

@@ -1,0 +1,15 @@
+<ul class="research-cards centered">
+    <% researches.forEach(r => { %>
+      <li class="research-card centered">
+        <a href="/researches/<%= r.slug %>" class="centered">
+          <img src="<%= r.thumbnail %>" alt="thumbnail" class="research-thumbnail centered">
+          <div class="research-titles">
+            <h2 class="research-heading"><%= r.title %></h2>
+            <p class="research-description"><%= r.description %></p>
+            <p class="research-keywords">Keywords: <%= r.keywords %></p>
+          </div>
+        </a>
+      </li>
+    <% }) %>
+  </ul>
+  

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/core.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/header-gradient.css" />
+    <link rel="stylesheet" href="./styles/contact-forms.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Basic&family=Bebas+Neue&family=NTR&display=swap"
+      rel="stylesheet"
+    />
+    <title>OMC | Contact Us</title>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <%- include('partials/header.ejs') %>
+
+    <!-- Contact Section -->
+    <section style="padding: 10vh 0">
+      <%- include('./partials/contact-forms.ejs') %>
+    </section>
+
+    <!-- Footer Section -->
+    <%- include('partials/footer.ejs') %>
+
+    <script
+      src="https://kit.fontawesome.com/82432b4eb3.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      (() => {
+        const params = new URLSearchParams(location.search);
+        const m = params.get('msg');
+        if (!m) return;
+      
+        const DICT = {
+          success : ['Thanks! You’re on the list.',       'success'],
+          exists  : ['You’re already subscribed.',        'info'   ],
+          sent    : ['Thanks! We’ll reply soon.',         'success'],
+          stored  : ['Message saved; we’ll reply ASAP.',  'warn'   ],
+          missing : ['Please fill in every field.',       'error'  ],
+          error   : ['Oops – something went wrong.',      'error'  ]
+        };
+        if (!DICT[m]) return;
+      
+        const [text, style] = DICT[m];
+      
+        const toast = document.createElement('div');
+        toast.className = `toast ${style}`;
+        toast.innerHTML = `
+          <i class="fa-solid fa-circle-check"></i>
+          <span>${text}</span>`;
+        document.body.appendChild(toast);
+      
+        window.addEventListener('load', () => {
+          requestAnimationFrame(() => toast.classList.add('show'));
+            setTimeout(() => {
+            toast.classList.remove('show');
+            toast.addEventListener('transitionend', () => toast.remove(), { once:true });
+          }, 10_000);
+        });
+      })();
+      </script>
+      
+      
+  </body>
+</html>

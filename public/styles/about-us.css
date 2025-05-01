@@ -1,0 +1,315 @@
+.about-us-section {
+  flex-direction: column;
+  gap: 15vh;
+  padding: 10vh;
+}
+
+.about-us-content {
+  flex-direction: column;
+  gap: 5vh;
+}
+
+.about-us-row {
+  justify-content: space-between;
+  width: 80vw;
+}
+
+.about-us-text {
+  flex-direction: column;
+  align-items: start;
+  gap: 3vh;
+  max-width: 30vw;
+  color: var(--secondary);
+}
+
+.about-us-text > h2 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 2.6vw;
+}
+
+.about-us-text > p {
+  font-family: "Basic", sans-serif;
+  font-size: 1vw;
+  text-align: justify;
+}
+
+.row-indicator {
+  width: auto;
+  height: auto;
+}
+
+.circle {
+  width: 1vw;
+  height: 1vw;
+  background: var(--secondary);
+  border-radius: 0.5vw;
+  position: relative;
+  margin-top: 4vh;
+}
+
+.vertical-line {
+  width: 2px;
+  height: 80%;
+  background: var(--secondary);
+  margin: 0.4vh auto 0 auto;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+.about-us-row-content {
+  align-items: stretch;
+  gap: 3vw;
+}
+
+.about-us-image {
+  background: #333;
+  border: 0.2vw solid var(--primary);
+  border-radius: 0.5vw;
+}
+
+.about-us-image > img {
+  width: 33.33vw;
+}
+
+.meet-the-team {
+  flex-direction: column;
+  gap: 7vh;
+  padding-bottom: 7vh;
+}
+
+#meet-the-team-title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 5vw;
+  color: var(--secondary);
+  text-align: center;
+}
+
+.team-members {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3vw;
+}
+
+.member-card {
+  width: 13vw;
+  border: 0.2vw solid var(--primary);
+  flex-direction: column;
+  gap: 1.3vh;
+  border-radius: 0.5vw;
+  box-shadow: 0.2vw 0.2vw 1vw 0.1vw rgba(0, 0, 0, 0.25);
+  padding-bottom: 2vh;
+  transition: 0.3s ease;
+}
+
+.member-card:hover {
+  transform: translateY(-1vh);
+}
+
+.member-image {
+  width: 13vw;
+  border-radius: 0.5vw 0.5vw 0 0;
+}
+
+.member-titles {
+  flex-direction: column;
+}
+
+#member-job {
+  font-family: "Basic", sans-serif;
+  font-size: 0.9vw;
+  color: #2b29634e;
+}
+
+#member-name {
+  font-family: "Basic", sans-serif;
+  font-size: 1.2vw;
+  color: var(--secondary);
+}
+
+.member-socials {
+  gap: 0.5vw;
+}
+
+.member-socials > a > i {
+  font-size: 1.5vw;
+  color: var(--secondary);
+  transition: 0.2s;
+}
+
+.member-socials > a > i:hover {
+  color: var(--primary);
+}
+
+.rotate-right {
+  transform: rotate(3deg);
+}
+
+.rotate-left {
+  transform: rotate(-3deg);
+}
+
+@media (max-width: 1400px) {
+  .about-us-section {
+    padding: 8vh 6vw;
+    gap: 18vh;
+  }
+  .about-us-content {
+    gap: 8vh;
+  }
+
+  .about-us-row {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 7vh;
+  }
+  .about-us-row-content {
+    flex-direction: row;
+    gap: 6vw;
+  }
+
+  .about-us-text {
+    max-width: 90%;
+  }
+
+  .about-us-text > h2 {
+    font-size: 7vw;
+  }
+  .about-us-text > p {
+    font-size: 3vw;
+  }
+
+  .rotate-right {
+    transform: rotate(0);
+  }
+
+  .rotate-left {
+    transform: rotate(0);
+  }
+
+  .circle {
+    width: 14px;
+    height: 14px;
+    margin-top: 0;
+  }
+  .vertical-line {
+    height: 100%;
+  }
+
+  .about-us-image {
+    width: 100%;
+  }
+  .about-us-image > img {
+    width: 100%;
+  }
+
+  #meet-the-team-title {
+    font-size: 8vw;
+  }
+
+  .team-members {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6vw;
+  }
+  .member-card {
+    width: 36vw;
+    border: .5vw solid var(--primary);
+  }
+  .member-image {
+    width: 36vw;
+  }
+  #member-job {
+    font-size: 3vw;
+  }
+  #member-name {
+    font-size: 4.2vw;
+  }
+  .member-socials > a > i {
+    font-size: 5vw;
+  }
+  .member-socials {
+    gap: 2vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-us-section {
+    padding: 6vh 5vw;
+    gap: 18vh;
+  }
+  .about-us-content {
+    gap: 15vh;
+  }
+
+  .row-indicator {
+    display: none;
+  }
+
+  .about-us-row-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 6vh;
+  }
+
+  .about-us-text {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  .about-us-text > h2 {
+    font-size: 7vw;
+  }
+  .about-us-text > p {
+    font-size: 3.7vw;
+  }
+
+  .circle {
+    width: 10px;
+    height: 10px;
+    margin: 0 auto;
+  }
+  .vertical-line {
+    height: 60px;
+  }
+
+  .about-us-image {
+    border-width: 3px;
+  }
+  .about-us-image > img {
+    width: 100%;
+  }
+
+  #meet-the-team-title {
+    font-size: 15vw;
+  }
+
+  .team-members {
+    grid-template-columns: 1fr;
+    gap: 7vh;
+  }
+  .member-card {
+    width: 50vw;
+  }
+  .member-image {
+    width: 50vw;
+  }
+  #member-job {
+    font-size: 3.5vw;
+  }
+  #member-name {
+    font-size: 4.5vw;
+  }
+  .member-socials {
+    gap: 2.5vw;
+  }
+  .member-socials > a > i {
+    font-size: 6vw;
+  }
+}

@@ -1,0 +1,277 @@
+.navbar-container {
+  position: sticky;
+  top: 6vh;
+  z-index: 1000;
+}
+
+.navbar {
+  background: rgba(255, 255, 255, 0.57);
+  width: 60vw;
+  height: 9.5vh;
+  border-radius: 0.5vw;
+  box-shadow: 4px 4px 35px 1px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(9px);
+  padding: 0 2vw;
+  justify-content: space-between;
+}
+
+#nav-logo {
+  width: 5vw;
+}
+
+.hamburger {
+  display: none;
+  font-size: 5vw;
+  max-width: 44px;
+  aspect-ratio: 1/1;
+  background: transparent;
+  border: 0;
+  position: relative;
+  z-index: 1100;
+  cursor: pointer;
+  color: var(--secondary);
+  padding-top: 1.6vw;
+}
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--secondary);
+  margin: 22% 0;
+  transition: 0.3s;
+}
+.hamburger.active span:nth-child(1) {
+  transform: translateY(200%) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-200%) rotate(-45deg);
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+}
+.nav-items li {
+  font-family: "NTR", sans-serif;
+  font-size: 1vw;
+  color: var(--secondary);
+  border-radius: 0.5vw;
+  padding: 0.2vw 1vw;
+  transition: 0.2s;
+}
+.nav-items li:hover {
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+#join-us {
+  padding: 0.5vh 2.4vw;
+}
+
+.header {
+  height: 100vh;
+  margin-top: -10vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+}
+.heading-container {
+  display: flex;
+  flex-direction: column;
+}
+.headline-container {
+  gap: 2vw;
+}
+#headline {
+  max-width: 90vw;
+  z-index: 99;
+}
+.icons-row {
+  display: flex;
+  width: 100%;
+  gap: 2vw;
+  margin-bottom: 1vh;
+}
+.icons-column {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1vh;
+  gap: 2vh;
+}
+.icons-row img,
+.icons-column img {
+  width: 2.5vw;
+}
+
+#headline {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 5vw;
+  text-align: center;
+  color: var(--secondary);
+}
+.heading-container > img {
+  width: 25vw;
+  position: relative;
+  top: -3vh;
+}
+
+.cta-btns {
+  display: flex;
+  gap: 2vw;
+}
+
+#nav-join-us {
+  display: none;
+}
+
+@media (max-width: 1400px) {
+  #nav-logo {
+    width: 12vw;
+  }
+  .header {
+    height: 90vh;
+  }
+  .heading-container {
+    padding-top: 10vh;
+  }
+  #headline {
+    font-size: 9vw;
+  }
+  .icons-row img,
+  .icons-column img {
+    width: 6vw;
+  }
+  .headline-container {
+    gap: 3.8vw;
+  }
+  .heading-container > img {
+    width: 40vw;
+    top: -1vh;
+  }
+  #join-us {
+    display: none;
+  }
+  #nav-join-us {
+    display: block;
+  }
+  .hamburger {
+    display: block;
+  }
+  .nav-items {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: #fff;
+    padding: 3vh 0;
+    gap: 3vh;
+    display: none;
+  }
+  .nav-items.show {
+    display: flex;
+  }
+  .nav-items li {
+    font-size: 3vw;
+    padding: 0;
+  }
+  .cta-btns button {
+    width: 30vw;
+    font-size: 2vw;
+    border-radius: 1vw;
+  }
+  #browse-courses-btn {
+    border: .4vw solid var(--secondary);
+    box-shadow: 2vw 2vw 7vw 1vw rgba(0, 0, 0, 0.25);
+  }
+  .cta-btns {
+    flex-direction: column;
+    gap: 4vh;
+    margin-top: 6vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 5vw;
+  }
+  .heading-container {
+    padding-top: 10vh;
+  }
+  #headline {
+    font-size: 12vw;
+  }
+  .icons-row img,
+  .icons-column img {
+    width: 7vw;
+  }
+  .headline-container {
+    gap: 2vw;
+  }
+  .heading-container > img {
+    width: 55vw;
+    top: -1vh;
+  }
+  #nav-logo {
+    width: 17vw;
+  }
+  .hamburger {
+    padding-right: 3vw;
+  }
+  .cta-btns button {
+    width: 50vw;
+    font-size: 3.5vw;
+    border-radius: 1vw;
+  }
+}
+
+@media (max-width: 480px) {
+  #headline {
+    font-size: 13vw;
+  }
+  .navbar {
+    width: 80vw;
+    height: 7vh;
+    padding: 1vh 5vw;
+    border-radius: 1vw;
+  }
+  .nav-items li {
+    font-size: 7vw;
+  }
+  .icons-row img,
+  .icons-column img {
+    width: 9vw;
+  }
+  .headline-container {
+    gap: 4vw;
+  }
+  .cta-btns button {
+    width: 80vw;
+    font-size: 4.5vw;
+    border-radius: 1vw;
+  }
+  .cta-btns {
+    gap: 4vh;
+    margin-top: 6vh;
+  }
+  #nav-logo {
+    width: 18vw;
+  }
+  .hamburger {
+    font-size: 8vw;
+    padding-top: 1.2vh;
+  }
+  .heading-container > img {
+    width: 75vw;
+    top: -1vh;
+  }
+}

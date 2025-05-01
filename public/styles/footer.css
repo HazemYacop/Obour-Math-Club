@@ -1,0 +1,133 @@
+.footer-container {
+  background-color: #0b2447;
+  font-family: "Basic", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4vh;
+  color: #fff;
+  padding-top: 3vh;
+}
+
+.footer-components {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+#footer-logo {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 3.33vw;
+  color: #fff;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+}
+
+.footer-column-title {
+  font-size: 1.3vw;
+  margin-bottom: 1.5vh;
+}
+
+.footer-item {
+  font-size: 1vw;
+  color: #fff;
+  transition: 0.1s;
+}
+
+.footer-item:hover {
+  color: #0cc0df;
+}
+
+#love {
+  margin-bottom: 2vh;
+  font-size: 1.1vw;
+}
+
+#love a {
+  border-bottom: 1px solid #453886;
+  color: var(--primary);
+  padding-bottom: 0.25em;
+  text-decoration: none;
+}
+
+#love a:hover {
+  color: #2196f3;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23453886' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-size: 20%;
+  border-bottom: 0;
+  padding-bottom: 0.3em;
+  text-decoration: none;
+}
+
+@media (max-width: 1400px) {
+  .footer-components {
+    flex-wrap: wrap;
+    gap: 4vh;
+  }
+  #footer-logo {
+    font-size: 6vw;
+  }
+  .footer-column {
+    align-items: flex-start;
+  }
+  .footer-column-title {
+    font-size: 2vw;
+  }
+  .footer-item {
+    font-size: 1.8vw;
+  }
+  #love {
+    font-size: 1.8vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    gap: 6vh;
+    padding-top: 5vh;
+  }
+  .footer-components {
+    flex-direction: column;
+    align-items: center;
+    gap: 6vh;
+  }
+  #footer-logo {
+    font-size: 8vw;
+  }
+  .footer-column {
+    align-items: center;
+  }
+  .footer-column-title {
+    font-size: 4vw;
+  }
+  .footer-item {
+    font-size: 3.8vw;
+  }
+  #love {
+    font-size: 3.5vw;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  #footer-logo {
+    font-size: 9vw;
+  }
+  .footer-column-title {
+    font-size: 5vw;
+  }
+  .footer-item {
+    font-size: 4.5vw;
+  }
+  #love {
+    font-size: 4vw;
+  }
+}

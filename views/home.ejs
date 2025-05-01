@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/core.css" />
+    <link rel="stylesheet" href="./styles/home.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/header-gradient.css" />
+    <link rel="stylesheet" href="./styles/blogs-cards.css" />
+    <link rel="stylesheet" href="./styles/academics-form.css" />
+    <link rel="stylesheet" href="./styles/courses-cards.css" />
+    <link rel="stylesheet" href="./styles/researches-cards.css" />
+    <link rel="stylesheet" href="./styles/contact-forms.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Basic&family=Bebas+Neue&family=NTR&display=swap"
+      rel="stylesheet"
+    />
+    <title>Obour Math Club | Home</title>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <%- include('partials/header.ejs') %>
+
+    <!-- Intro Section -->
+    <section class="intro-section">
+      <div class="intro-titles centered">
+        <h2 id="intro-heading">Fueling curiosity, solving problems</h2>
+        <h3 id="intro-subheading">
+          and building the future through <span class="underlined">Math</span>.
+        </h3>
+        <p id="intro-description">
+          Obour STEM Math Club is a student-led initiative focused on
+          Mathematics. Our mission is to create a space where young minds
+          collaborate, explore advanced concepts, and prepare for national and
+          international competitions.
+        </p>
+      </div>
+      <div class="events-wrapper">
+        <div class="events-track">
+          <img src="./assets/about-1.jpg" class="event-card" id="event-card-1"></img>
+          <img src="./assets/about-2.jpg" class="event-card" id="event-card-2"></img>
+          <img src="./assets/about-3.jpg" class="event-card" id="event-card-3"></img>
+          <img src="./assets/about-1.jpg" class="event-card" id="event-card-1"></img>
+          <img src="./assets/about-2.jpg" class="event-card" id="event-card-2"></img>
+          <img src="./assets/about-3.jpg" class="event-card" id="event-card-3"></img>
+        </div>
+      </div>
+      <p class="caption">Hover To Stop!</p>
+    </section>
+
+    <!-- Blogs Section -->
+    <section class="blogs-section">
+      <%- include("./partials/up-slide.ejs") %>
+      <div class="section-titles centered">
+        <h2 class="section-heading">What Do We Write About?</h2>
+        <h3 class="section-subheading">Pretty Much Everything.</h3>
+        <p class="section-description">
+          Dive into our blog for student-written articles, math curiosities, and
+          tips to boost your academic journey. Whether you're curious about
+          mathematical paradoxes or looking for study hacks—we’ve got you
+          covered.
+        </p>
+      </div>
+      <%- include('partials/blogs-cards.ejs', { blogs }) %>
+      <a href="/blogs">
+        <button class="no-bg-btn centered">
+          <p>Explore All Blogs</p>
+          <i class="fa-solid fa-arrow-right no-bg-btn-arrow"></i>
+        </button>
+      </a>
+      <%- include("./partials/down-slide.ejs") %>
+    </section>
+
+    <!-- Academics Section -->
+    <section class="academics-section centered">
+      <div class="section-titles centered">
+        <h2 class="section-heading">
+          What Can <span class="highlighted">You</span> Do?
+        </h2>
+        <h3 class="section-subheading">Learn. Practice. Excel.</h3>
+        <p class="section-description">
+          Access structured learning resources, grade-specific content, and
+          hands-on exercises to master
+          every learning outcome. Built for Grades 10, 11, and 12 STEM
+          students—at your pace, your way.
+        </p>
+      </div>
+      <%- include("./partials/academics-form.ejs") %>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses-section">
+      <%- include("./partials/up-slide.ejs") %>
+      <div class="section-titles">
+        <h2 class="section-heading">Our Courses</h2>
+      </div>
+      <%- include('partials/courses-cards.ejs', { courses }) %>
+      <a href="/olympiads">
+        <button class="no-bg-btn centered">
+          <p>Explore All Courses</p>
+          <i class="fa-solid fa-arrow-right no-bg-btn-arrow"></i>
+        </button>
+      </a>
+    </section>
+
+    <!-- Researches Section -->
+    <section class="researches-section">
+      <div class="section-titles">
+        <h2 class="section-heading">Our Researches</h2>
+      </div>
+      <%- include('partials/researches-cards.ejs', { researches }) %>
+      <a href="/researches">
+        <button class="no-bg-btn centered">
+          <p>Explore All Researches</p>
+          <i class="fa-solid fa-arrow-right no-bg-btn-arrow"></i>
+        </button>
+      </a>
+      <%- include("./partials/down-slide.ejs") %>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+      <%- include('./partials/contact-forms.ejs') %>
+    </section>
+
+    <!-- Footer Section -->
+    <%- include('partials/footer.ejs') %>
+
+    <script
+      src="https://kit.fontawesome.com/82432b4eb3.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(".event-card").hover(
+        function () {
+          $(".events-track").css("animation-play-state", "paused");
+        },
+        function () {
+          $(".events-track").css("animation-play-state", "running");
+        }
+      );
+
+      document.addEventListener("DOMContentLoaded", function () {
+        $(".no-bg-btn").hover(
+          function () {
+            $(".no-bg-btn-arrow").addClass("rotated-arrow");
+          },
+          function () {
+            $(".no-bg-btn-arrow").removeClass("rotated-arrow");
+          }
+        );
+      });
+    </script>
+  </body>
+</html>

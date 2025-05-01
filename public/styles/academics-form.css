@@ -1,0 +1,192 @@
+#academics-form {
+  gap: 1.5vw;
+}
+
+.list-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-btn {
+  padding: 2vh 0;
+  width: 15vw;
+  box-shadow: 0.3vw 0.3vw 2vw 0.1vw rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  color: var(--secondary);
+  border-radius: 0.5vw;
+  font-size: 1.04vw;
+  font-family: "Basic", sans-serif;
+  gap: 2vw;
+}
+
+.dropdown-btn:hover {
+  box-shadow: 0.42vw 0.42vw 4.17vw 0.26vw rgba(0, 0, 0, 0.25);
+}
+
+.dropdown-list {
+  opacity: 0;
+  transform: translateY(-0.52vw);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 0.3vw 0.3vw 2vw 0.1vw rgba(0, 0, 0, 0.25);
+  border-radius: 0.5vw;
+  z-index: 100;
+  width: 100%;
+}
+
+.dropdown-list.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-list li {
+  padding: 0.52vw 0.78vw;
+  cursor: pointer;
+  font-family: "Basic", sans-serif;
+  font-size: 1.04vw;
+  color: #2b2963;
+  transition: 0.2s ease-in;
+}
+
+.dropdown-list li:hover {
+  background-color: var(--white);
+}
+
+.dropdown-btn i {
+  transition: transform 0.3s ease;
+}
+
+.dropdown-btn:hover i {
+  transform: translateY(0.16vw);
+}
+
+.dropdown-btn i.rotated {
+  transform: rotate(180deg);
+}
+
+@media (max-width: 1400px) {
+  .academics-section {
+    padding: 2vh 0;
+    gap: 6vh;
+  }
+  .lecture-subheading {
+    font-size: 5vw;
+  }
+  .lecture-description {
+    font-size: 2.5vw;
+    max-width: 90vw;
+  }
+  .lecture-video {
+    width: 90vw;
+    height: 55vh;
+  }
+  .download-asset-button {
+    font-size: 2vw;
+    height: 6vh;
+    width: 90vw;
+  }
+
+  #academics-form {
+    flex-wrap: wrap;
+    gap: 3vw;
+  }
+  .dropdown-btn {
+    width: 40vw;
+    font-size: 3vw;
+    border-radius: 1vw;
+  }
+  .dropdown-list li {
+    font-size: 3vw;
+  }
+  #get-statred-btn {
+    font-size: 3vw;
+    width: 40vw;
+  }
+  .tv-noise {
+    display: none;
+  }
+}
+
+@media (max-width: 786px) {
+  .academics-section {
+    gap: 6vh;
+  }
+  .lecture-section {
+    gap: 6vh;
+  }
+  .lecture-subheading {
+    font-size: 5vw;
+  }
+  .lecture-description {
+    font-size: 2.8vw;
+  }
+  .lecture-video {
+    width: 92vw;
+    height: 52vh;
+    border-radius: 1.2vw;
+  }
+  .download-asset-button {
+    font-size: 3.4vw;
+    width: 92vw;
+    min-height: 7vh;
+  }
+
+  #academics-form {
+    flex-direction: column;
+    gap: 3vh;
+  }
+  .dropdown-btn {
+    width: 75vw;
+    font-size: 4vw;
+    padding: 2vh 0;
+    gap: 6vw;
+  }
+  .dropdown-list li {
+    font-size: 4vw;
+    padding: 0.9vh 1.2vh;
+  }
+  #get-statred-btn {
+    font-size: 4vw;
+    width: 75vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .academics-section {
+    gap: 5vh;
+    padding: 5vh 0;
+  }
+  .lecture-subheading {
+    font-size: 7vw;
+  }
+  .lecture-description {
+    font-size: 3.8vw;
+  }
+  .lecture-video {
+    width: 96vw;
+    height: 52vw;
+    border-radius: 2vw;
+  }
+  .download-asset-button {
+    font-size: 4.2vw;
+    width: 96vw;
+    min-height: 8vh;
+    border-radius: 1vw;
+    height: 5vh;
+  }
+  .dropdown-list {
+    width: 85vw;
+  }
+  .dropdown-list li {
+    font-size: 5vw;
+    padding: 1.2vh 2vh;
+  }
+  #get-statred-btn {
+    font-size: 5vw;
+  }
+}

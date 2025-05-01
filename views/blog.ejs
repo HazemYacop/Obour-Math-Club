@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/core.css" />
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="/styles/header-gradient.css" />
+    <link rel="stylesheet" href="/styles/blog.css" />
+    <link rel="stylesheet" href="/styles/footer.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Basic&family=Bebas+Neue&family=NTR&display=swap"
+      rel="stylesheet"
+    />
+    <title>OMC | <%= b.title %></title>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <%- include('partials/header.ejs') %>
+
+    <!-- blog Section -->
+    <section class="blog-single centered">
+      <div class="blog-content centered">
+        <img src="<%= b.thumbnail %>" alt="thumbnail" class="blog-hero" />
+
+        <article class="blog-body"><%- b.body %></article>
+      </div>
+      <aside class="side-bar">
+        <div class="sidebar-subsection">
+          <h3 class="sidebar-subtitle">Trending Articles</h3>
+          <ul>
+            <% trending.forEach(t => { %>
+            <li>
+              <a href="/blogs/<%= t.slug %>">
+                <%= t.title %><% if (t.subtitle) { %>. <%= t.subtitle %><% } %>
+              </a>
+            </li>
+            <% }) %>
+          </ul>
+        </div>
+        <div class="sidebar-subsection">
+          <h3 class="sidebar-subtitle">Subscribe To Newsletter</h3>
+          <form
+            action="/newsletter"
+            method="post"
+            class="sidebar-newsletter-form"
+          >
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email …"
+              required
+              class="newsletter-email"
+            />
+
+            <button class="primary-btn blog-sub-btn">Subscribe</button>
+          </form>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Footer Section -->
+    <%- include('partials/footer.ejs') %>
+
+    <script
+      src="https://kit.fontawesome.com/82432b4eb3.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </body>
+</html>

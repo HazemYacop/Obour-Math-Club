@@ -1,0 +1,36 @@
+<div class="contact-section-container centered">
+    <div class="get-in-touch-section contact-subsection centered">
+        <div class="contact-subsection-titles">
+            <h3 class="contact-subsection-heading">Get <span class="underlined">In Touch</span></h3>
+            <p class="contact-subsection-description">Whether you're a student wanting to join, a teacher looking to collaborate, or a supporter with a project in mind—we'd love to hear from you! Don’t hesitate to reach out. Your next big opportunity might start with a simple message.</p>
+        </div>
+        <div class="contact-form-contanier centered">
+            <form action="/contact" method="post" class="contact-form centered">
+                <div class="contact-form-row centered">
+                  <input type="text"  name="name"  placeholder="Your Name"  required>
+                  <input type="email" name="email" placeholder="Your Email" required>
+                </div>
+              
+                <textarea name="message" id="contact-message"
+                          placeholder="Your Message …" required></textarea>
+              
+                <button type="submit" class="primary-btn message-submit-btn">
+                  Submit Message
+                </button>
+            </form>              
+        </div>
+    </div>
+    <div class="sub-to-newsletter-section contact-subsection centered">
+        <div class="contact-subsection-titles">
+            <h3 class="contact-subsection-heading">Subscribe To Our <span class="underlined">Newsletter</span></h3>
+            <p class="contact-subsection-description">Don’t miss a moment of inspiration, innovation, or opportunity. Get the latest updates on club events, competitions, new resources, and student achievements—delivered straight to your inbox.</p>
+        </div>
+        <div class="contact-form-contanier centered" id="newsletter-form-container">
+            <form action="/newsletter" method="post" class="contact-form centered" id="newsletter-form">
+                <img src="./assets/newsletter-thumbnail.jpg" alt="newsletter form thumbnail">
+                <input type="email" name="email" placeholder="Your Email" id="newsletter-email-input">
+                <button type="submit" class="primary-btn email-submit-btn">Subscribe To Newsletter</button>
+            </form>
+        </div>
+    </div>
+</div>

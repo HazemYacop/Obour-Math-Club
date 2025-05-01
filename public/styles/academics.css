@@ -1,0 +1,64 @@
+.academics-section {
+  flex-direction: column;
+  justify-content: center;
+  min-height: 70vh;
+  gap: 8vh;
+  padding: 5vh 0 20vh;
+}
+
+.lecture-section {
+  align-items: start;
+  flex-direction: column;
+  gap: 7vh;
+}
+
+.about-lecture,
+.lecture-files {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+}
+
+.lecture-subheading {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 2.86vw;
+  font-weight: 600;
+}
+
+.lecture-description {
+  font-family: "Basic", sans-serif;
+  font-size: 1.25vw;
+  max-width: 80vw;
+}
+
+.lecture-video {
+  width: 80vw;
+  height: 80vh;
+  border-radius: 0.5vw;
+}
+
+.download-asset-button {
+  font-family: "Basic", sans-serif;
+  font-size: 1.6vw;
+  width: 80vw;
+  justify-content: space-between;
+  height: 8vh;
+}
+
+.tv-noise {
+  width: 80vw;
+  height: 80vh;
+  background: repeating-linear-gradient(#111, #111 50%, white 50%, white);
+  background-size: 5px 5px;
+  filter: url(#noise);
+  opacity: 60%;
+}
+@keyframes b {
+  100% {
+    background-position: 50% 0, 60% 50%;
+  }
+}
+svg {
+  width: 0;
+  height: 0;
+}

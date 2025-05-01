@@ -1,0 +1,135 @@
+<form id="academics-form" class="centered">
+  <div class="list-dropdown">
+    <button
+      type="button"
+      class="dropdown-btn centered"
+      id="grade-btn"
+      onclick="toggleDropdown('grade-list')"
+    >
+      <p>Choose Grade</p>
+      <i class="fa-solid fa-arrow-down grade-arrow"></i>
+    </button>
+
+    <div class="dropdown-list" id="grade-list">
+      <ul>
+        <li onclick="selectOption('grade','Grade 10')">Grade 10</li>
+        <li onclick="selectOption('grade','Grade 11')">Grade 11</li>
+        <li onclick="selectOption('grade','Grade 12')">Grade 12</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="list-dropdown">
+    <button
+      type="button"
+      class="dropdown-btn centered"
+      id="lo-btn"
+      onclick="toggleDropdown('lo-list')"
+    >
+      <p>Choose L.O</p>
+      <i class="fa-solid fa-arrow-down lo-arrow"></i>
+    </button>
+
+    <div class="dropdown-list" id="lo-list">
+      <ul></ul>
+    </div>
+  </div>
+
+  <input type="hidden" name="grade" id="grade-input" />
+  <input type="hidden" name="lo" id="lo-input" />
+
+  <button type="submit" class="super-btn" id="get-statred-btn">Get Started</button>
+</form>
+
+<script>
+  const prettyUrl = true;
+
+  function toggleDropdown(listId) {
+    const dd = document.getElementById(listId);
+    const shown = dd.classList.toggle("show");
+    dd.previousElementSibling
+      .querySelector("i")
+      .classList.toggle("rotated", shown);
+  }
+
+  function selectOption(type, value) {
+    if (type === "grade") {
+      document.querySelector("#grade-btn p").textContent = value;
+
+      const gradeNum = value.split(" ")[1];
+      document.getElementById("grade-input").value = gradeNum;
+
+      // rebuild LO list
+      const map = {
+        "Grade 10": ["LO1", "LO2", "LO3", "LO4"],
+        "Grade 11": ["LO1", "LO2", "LO3", "LO4", "LO5", "LO6", "LO7"],
+        "Grade 12": ["LO1", "LO2"],
+      };
+      const loList = map[value] || [];
+      const ul = document.querySelector("#lo-list ul");
+      ul.innerHTML = "";
+      loList.forEach((lo) => {
+        ul.insertAdjacentHTML(
+          "beforeend",
+          `<li onclick="selectOption('lo','${lo}')">${lo}</li>`
+        );
+      });
+      // pre-select first LO
+      selectOption("lo", loList[0]);
+    }
+
+    if (type === "lo") {
+      document.querySelector("#lo-btn p").textContent = value;
+      document.getElementById("lo-input").value = value;
+      document.getElementById("lo-list").classList.remove("show");
+      document.querySelector("#lo-btn i").classList.remove("rotated");
+    }
+
+    if (type === "grade") {
+      document.getElementById("grade-list").classList.remove("show");
+      document.querySelector("#grade-btn i").classList.remove("rotated");
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    selectOption("grade", "Grade 10");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".list-dropdown")) {
+      document
+        .querySelectorAll(".dropdown-list")
+        .forEach((d) => d.classList.remove("show"));
+      document
+        .querySelectorAll(".dropdown-btn i")
+        .forEach((i) => i.classList.remove("rotated"));
+    }
+  });
+
+  document.getElementById("academics-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const grade = document.getElementById("grade-input").value;
+    const lo = document.getElementById("lo-input").value;
+
+    if (!grade || !lo) return;
+
+    if (prettyUrl) {
+      window.location.href = `/academics/grade-${grade}/${lo}#academics-form`;
+    } else {
+      const params = new URLSearchParams({ grade, lo });
+      window.location.href = `/academics?${params.toString()}`;
+    }
+  });
+</script>
+
+<% if (locals.lecture) { %>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    console.log("<%= lecture.lo_code %>");
+    selectOption("grade", "Grade <%= lecture.grade %>");
+    selectOption("lo", "<%= lecture.lo_code %>");
+  });
+</script>
+<% } else { %>
+
+<% } %>
