@@ -1,9 +1,13 @@
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import express from "express";
 import mailchimp from "@mailchimp/mailchimp_marketing";
 import nodemailer from "nodemailer";
 import { Pool } from "pg";
 import "dotenv/config";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname  = path.dirname(__filename);
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -24,7 +28,6 @@ const db = new Pool({
   ssl: { rejectUnauthorized: false }
 });
 
-const __dirname = import.meta.dirname;
 const app = express();
 const port = process.env.PORT || 3000;
 
