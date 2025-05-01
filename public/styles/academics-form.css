@@ -159,7 +159,8 @@
 @media (max-width: 480px) {
   .academics-section {
     gap: 5vh;
-    padding: 5vh 0;
+    min-height: auto;
+    padding: 0 0 4vh;
   }
   .lecture-subheading {
     font-size: 7vw;

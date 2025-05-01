@@ -160,14 +160,14 @@
   }
   .events-track {
     gap: 5vw;
-    width: calc(70vw * 6);
+    width: calc(80vw * 6);
   }
   .event-card {
-    width: 65vw;
+    width: 75vw;
     height: 30vh;
   }
   .event-card > img {
-    width: 65vw;
+    width: 75vw;
     height: 30vh;
   }
   .blogs-section {
