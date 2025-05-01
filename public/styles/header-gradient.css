@@ -486,3 +486,11 @@
     animation: hero-gradient-animation 15s linear infinite alternate-reverse;
     background-blend-mode: normal, normal, normal, normal, normal, normal, normal, normal, normal, normal;
 }
+
+ @media (max-width:768px){
+    .header{
+      animation:none;
+      background: #D4FFFE url("/assets/header-bg.png") center/cover no-repeat;
+    }
+  }
+  
