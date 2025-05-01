@@ -216,15 +216,15 @@
 
   .events-track {
     gap: 5vw;
-    width: calc(120vw * 6);
+    width: calc(160vw * 6);
   }
   .event-card {
-    width: 115vw;
-    height: 35vh;
+    width: 155vw;
+    height: 30vh;
   }
   .event-card > img {
-    width: 115vw;
-    height: 35vh;
+    width: 155vw;
+    height: 30vh;
   }
 
   .blogs-section,

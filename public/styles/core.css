@@ -241,7 +241,7 @@ section {
   .toast {
     right: 4vw;
     bottom: 4vh;
-    min-width: 16rem;
+    width: 90vw;
   }
 }
 
@@ -315,9 +315,6 @@ section {
   }
 
   .toast {
-    right: 50%;
-    transform: translate(50%, 2rem);
     font-size: 4vw;
-    min-width: 70vw;
   }
 }
