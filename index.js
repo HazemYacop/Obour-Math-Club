@@ -67,7 +67,10 @@ app.get("/academics/grade-:grade/:lo", async (req, res, next) => {
       [grade, lo.toUpperCase()]
     );
     if (!rows.length)
-      return res.render("404", { pageTitle: "404 – Page Not Found" });
+      return res.render("academics", {
+        pageTitle : "Academics",
+        comingSoon: true,
+      });
     res.render("academics", { lecture: rows[0], pageTitle: "Academics" });
   } catch (err) {
     next(err);

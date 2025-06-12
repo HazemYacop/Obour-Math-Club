@@ -32,6 +32,17 @@
   text-align: justify;
 }
 
+.no-files {
+  font-family: "Basic", sans-serif;
+  font-size: 1.25vw;
+}
+
+.coming-soon-text {
+  font-family: "Basic", sans-serif;
+  font-size: 2vw;
+  margin-bottom: 2vh;
+}
+
 .lecture-video {
   width: 80vw;
   height: 80vh;

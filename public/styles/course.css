@@ -68,6 +68,11 @@
   text-align: justify;
 }
 
+.no-files {
+  font-family: "Basic", sans-serif;
+  font-size: 1.25vw;
+}
+
 .lecture-video {
   width: 70vw;
   height: 70vh;
@@ -138,6 +143,9 @@ svg {
     font-size: 2.3vw;
     max-width: 80vw;
   }
+  .no-files {
+    font-size: 2.3vw;
+  }
   .download-asset-button {
     width: 90vw;
     min-height: 5vh;
@@ -167,6 +175,9 @@ svg {
     font-size: 3.4vw;
     max-width: 90vw;
   }
+  .no-files {
+    font-size: 3.4vw;
+  }
   .download-asset-button {
     width: 90vw;
     font-size: 3.8vw;
@@ -195,6 +206,9 @@ svg {
     font-size: 6.4vw;
   }
   .lecture-description {
+    font-size: 4.6vw;
+  }
+  .no-files {
     font-size: 4.6vw;
   }
   .download-asset-button {

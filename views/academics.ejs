@@ -46,7 +46,7 @@
           </div>
           <div class="lecture-files">
             <h3 class="lecture-subheading">Attached Assets:</h3>
-            <% if (lecture.attachments.length) { %>
+            <% if (lecture.attachments && lecture.attachments.length) { %>
               <ul class="lecture-attachments">
                 <% lecture.attachments.forEach(att => { %>
                   <li>
@@ -59,25 +59,30 @@
                   </li>
                 <% }) %>
               </ul>
+            <% } else { %>
+              <p class="no-files">No attached files</p>
             <% } %>
           </div>
           
         </div>
       <% } else { %>
-        <div class="tv-noise"></section>
-          <svg>
-            <filter id="noise">
-              <feTurbulence id="turbulence">
-                <animate
-                  attributeName="baseFrequency"
-                  dur="50s"
-                  values="0.9 0.9;0.8 0.8; 0.9 0.9"
-                  repeatCount="indefinite"
-                ></animate>
-              </feTurbulence>
-              <feDisplacementMap in="SourceGraphic" scale="60"></feDisplacementMap>
-            </filter>
-          </svg>
+        <% if (locals.comingSoon) { %>
+          <p class="coming-soon-text">Coming soon ...</p>
+        <% } %>
+        <div class="tv-noise"></div>
+        <svg>
+          <filter id="noise">
+            <feTurbulence id="turbulence">
+              <animate
+                attributeName="baseFrequency"
+                dur="50s"
+                values="0.9 0.9;0.8 0.8; 0.9 0.9"
+                repeatCount="indefinite"
+              ></animate>
+            </feTurbulence>
+            <feDisplacementMap in="SourceGraphic" scale="60"></feDisplacementMap>
+          </filter>
+        </svg>
       <% } %>
     </section>
 
