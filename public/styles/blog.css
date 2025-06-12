@@ -33,6 +33,11 @@
   text-align: justify;
 }
 
+.blog-pdf {
+  width: 62vw;
+  height: 100vh;
+}
+
 .sidebar-subtitle {
   font-family: "Barlow Condensed", sans-serif;
   font-size: 1.8vw;
