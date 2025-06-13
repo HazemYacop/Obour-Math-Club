@@ -1,5 +1,5 @@
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import express from "express";
 import mailchimp from "@mailchimp/mailchimp_marketing";
 import nodemailer from "nodemailer";
@@ -7,7 +7,7 @@ import { Pool } from "pg";
 import "dotenv/config";
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname  = path.dirname(__filename);
+const __dirname = path.dirname(__filename);
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -17,15 +17,15 @@ const transporter = nodemailer.createTransport({
 });
 
 mailchimp.setConfig({
-  apiKey : process.env.MAILCHIMP_API_KEY,
-  server : process.env.MAILCHIMP_SERVER_PREFIX,
+  apiKey: process.env.MAILCHIMP_API_KEY,
+  server: process.env.MAILCHIMP_SERVER_PREFIX,
 });
 
 const LIST_ID = process.env.MAILCHIMP_LIST_ID;
 
 const db = new Pool({
   connectionString: process.env.DATABASE_URL,
-  ssl: { rejectUnauthorized: false }
+  ssl: { rejectUnauthorized: false },
 });
 
 const app = express();
@@ -33,7 +33,7 @@ const port = process.env.PORT || 3000;
 
 app.set("views", "./views");
 app.set("view engine", "ejs");
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", async (req, res, next) => {
@@ -64,11 +64,11 @@ app.get("/academics/grade-:grade/:lo", async (req, res, next) => {
   try {
     const { rows } = await db.query(
       `SELECT * FROM lectures WHERE grade = $1 AND lo_code = $2 LIMIT 1`,
-      [grade, lo.toUpperCase()]
+      [grade, lo.toUpperCase()],
     );
     if (!rows.length)
       return res.render("academics", {
-        pageTitle : "Academics",
+        pageTitle: "Academics",
         comingSoon: true,
       });
     res.render("academics", { lecture: rows[0], pageTitle: "Academics" });
@@ -77,13 +77,13 @@ app.get("/academics/grade-:grade/:lo", async (req, res, next) => {
   }
 });
 
-app.get("/academics", (req, res) => [
-  res.render("academics", { pageTitle: "Academics" }),
-]);
+app.get("/academics", (req, res) => {
+  res.render("academics", { pageTitle: "Academics" });
+});
 
-app.get("/about-us", (req, res) => [
-  res.render("about-us", { pageTitle: "About Us" }),
-]);
+app.get("/about-us", (req, res) => {
+  res.render("about-us", { pageTitle: "About Us" });
+});
 
 app.get("/blogs", async (req, res, next) => {
   try {
@@ -91,7 +91,7 @@ app.get("/blogs", async (req, res, next) => {
       `SELECT slug, title, subtitle, description,
               icon_class, thumbnail
        FROM blogs
-       ORDER BY id DESC`
+       ORDER BY id DESC`,
     );
     res.render("blogs", { pageTitle: "Blogs", blogs });
   } catch (e) {
@@ -99,10 +99,11 @@ app.get("/blogs", async (req, res, next) => {
   }
 });
 
-app.get('/blogs/:slug', async (req, res, next) => {
+app.get("/blogs/:slug", async (req, res, next) => {
   try {
     const { rows } = await db.query(
-      'SELECT * FROM blogs WHERE slug = $1 LIMIT 1', [req.params.slug]
+      "SELECT * FROM blogs WHERE slug = $1 LIMIT 1",
+      [req.params.slug],
     );
     if (!rows.length) return next();
     const blog = rows[0];
@@ -112,16 +113,18 @@ app.get('/blogs/:slug', async (req, res, next) => {
        FROM blogs
        WHERE slug <> $1
        ORDER BY id DESC
-       LIMIT 3`, [blog.slug]
+       LIMIT 3`,
+      [blog.slug],
     );
 
-    res.render('blog', {
-      pageTitle : blog.title,
-      b         : blog,
-      trending
+    res.render("blog", {
+      pageTitle: blog.title,
+      b: blog,
+      trending,
     });
-
-  } catch (e) { next(e); }
+  } catch (e) {
+    next(e);
+  }
 });
 
 app.get("/contact-us", (req, res) => {
@@ -134,7 +137,7 @@ app.get("/contact-us", (req, res) => {
 app.get("/researches", async (req, res, next) => {
   try {
     const { rows: researches } = await db.query(
-      "SELECT slug, title, description, keywords, thumbnail FROM researches ORDER BY id"
+      "SELECT slug, title, description, keywords, thumbnail FROM researches ORDER BY id",
     );
     res.render("researches", { pageTitle: "Researches", researches });
   } catch (e) {
@@ -142,10 +145,11 @@ app.get("/researches", async (req, res, next) => {
   }
 });
 
-app.get('/researches/:slug', async (req, res, next) => {
+app.get("/researches/:slug", async (req, res, next) => {
   try {
     const { rows } = await db.query(
-      'SELECT * FROM researches WHERE slug = $1 LIMIT 1', [req.params.slug]
+      "SELECT * FROM researches WHERE slug = $1 LIMIT 1",
+      [req.params.slug],
     );
     if (!rows.length) return next();
     const research = rows[0];
@@ -155,22 +159,24 @@ app.get('/researches/:slug', async (req, res, next) => {
        FROM researches
        WHERE slug <> $1
        ORDER BY id DESC
-       LIMIT 3`, [research.slug]
+       LIMIT 3`,
+      [research.slug],
     );
 
-    res.render('research', {
-      pageTitle : research.title,
-      r         : research,
-      trending
+    res.render("research", {
+      pageTitle: research.title,
+      r: research,
+      trending,
     });
-
-  } catch (e) { next(e); }
+  } catch (e) {
+    next(e);
+  }
 });
 
 app.get("/olympiads", async (req, res, next) => {
   try {
     const { rows: courses } = await db.query(
-      "SELECT id, title, description, slug FROM courses ORDER BY id"
+      "SELECT id, title, description, slug FROM courses ORDER BY id",
     );
 
     res.render("olympiads", {
@@ -192,7 +198,7 @@ app.get("/olympiads/:courseSlug", async (req, res, next) => {
     .query(
       `SELECT * FROM course_concepts
      WHERE course_id=$1 ORDER BY idx`,
-      [course.id]
+      [course.id],
     )
     .then((r) => r.rows);
 
@@ -216,7 +222,7 @@ app.get("/olympiads/:courseSlug/:conceptSlug", async (req, res, next) => {
     .query(
       `SELECT * FROM course_concepts
      WHERE course_id=$1 ORDER BY idx`,
-      [course.id]
+      [course.id],
     )
     .then((r) => r.rows);
 
@@ -252,7 +258,7 @@ app.post("/contact", async (req, res) => {
   }
 
   const mail = {
-    from   : `"Obour Math Club" <${process.env.SMTP_USER}>`,
+    from: `"Obour Math Club" <${process.env.SMTP_USER}>`,
     replyTo: `"${name}" <${email}>`,
     to: process.env.CONTACT_TO,
     subject: `New message from ObourMathClub.com`,
@@ -269,7 +275,7 @@ app.post("/contact", async (req, res) => {
 
     await db.query(
       "CREATE TABLE IF NOT EXISTS messages (id SERIAL PRIMARY KEY, \
-        name TEXT, email TEXT, body TEXT, created_at TIMESTAMPTZ DEFAULT now())"
+        name TEXT, email TEXT, body TEXT, created_at TIMESTAMPTZ DEFAULT now())",
     );
     await db.query("INSERT INTO messages (name,email,body) VALUES ($1,$2,$3)", [
       name,
@@ -287,13 +293,12 @@ app.use((req, res) => {
   });
 });
 
-
 // server
 export default app;
 
 // start local server when not running on Vercel
 if (!process.env.VERCEL) {
   app.listen(process.env.PORT, () =>
-    console.log(`Server running → http://localhost:${process.env.PORT}`)
+    console.log(`Server running → http://localhost:${process.env.PORT}`),
   );
 }
