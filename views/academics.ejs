@@ -36,7 +36,7 @@
       <% if (locals.lecture) { %>
         <div class="lecture-section centered">
           <!-- YouTube embed -->
-          <iframe src="https://www.youtube.com/embed/<%= lecture.video_url.split('v=')[1] %>"
+          <iframe src="<%= lecture.video_url %>"
                   title="<%= lecture.grade %> — <%= lecture.lo_code %>" frameborder="0"
                   allowfullscreen loading="lazy" class="lecture-video"></iframe>
 
