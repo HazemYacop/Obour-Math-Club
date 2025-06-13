@@ -287,6 +287,13 @@ app.use((req, res) => {
   });
 });
 
-app.listen(port, () => {
-  console.log("Connection Established At http://localhost:" + port);
-});
+
+// server
+export default app;
+
+// start local server when not running on Vercel
+if (!process.env.VERCEL) {
+  app.listen(process.env.PORT, () =>
+    console.log(`Server running → http://localhost:${process.env.PORT}`)
+  );
+}
