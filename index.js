@@ -241,6 +241,16 @@ app.post("/newsletter", async (req, res) => {
       email_address: email,
       status: "subscribed",
     });
+
+    await transporter.sendMail({
+      from: `"Obour Math Club" <${process.env.SMTP_USER}>`,
+      to: email,
+      subject: "Welcome to Obour Math Club Newsletter",
+      text: "Thank you for subscribing to our newsletter!",
+      html: `<p>Thank you for subscribing to <strong>Obour Math Club</strong>\'s newsletter.</p>
+             <p>We\'ll keep you updated with the latest news and resources.</p>`,
+    });
+
     return res.redirect("/contact-us?msg=success");
   } catch (err) {
     if (err.status === 400 && err.response?.body?.title === "Member Exists") {
