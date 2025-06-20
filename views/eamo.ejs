@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/core.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/header-gradient.css" />
+    <link rel="stylesheet" href="./styles/eamo.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Basic&family=Bebas+Neue&family=NTR&display=swap"
+      rel="stylesheet"
+    />
+    <title>OMC | Egyptian Applied Mathematics Olympiad</title>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <%- include('partials/header.ejs') %>
+
+    <!-- EAMO Section -->
+    <section style="padding: 10vh 0">
+      <img
+        src="/assets/eamo-thumbnail.jpg"
+        alt="EAMO Thumbnail"
+        id="page-thumbnail"
+      />
+      <h1 id="page-heading">
+        Welcome to the Egyptian Applied Mathematics Olympiad (EAMO)
+      </h1>
+
+      <p class="page-paragraph">
+        The Egyptian Applied Mathematics Olympiad (EAMO) is the first
+        national-level competition in Egypt focused entirely on applied
+        mathematics. EAMO challenges high school students to solve real-world
+        problems using logic, modeling, data, and creativity. <br />
+        <br />
+        Applications for the 2025 edition are now open. Compete for national
+        recognition, develop advanced problem-solving skills, and join Egypt’s
+        future leaders in mathematics and innovation.
+      </p>
+
+      <h2 class="page-title">Competition Format</h2>
+
+      <h3 class="page-subtitle">Round 1: Qualification Round</h3>
+      <ul class="page-list">
+        <li>○ 5 Multiple-Choice Questions</li>
+        <li>○ 5 User-Input-Based Applied Math Problems</li>
+        <li>○ Duration: 90 minutes</li>
+        <li>○ Conducted online</li>
+      </ul>
+
+      <h3 class="page-subtitle">Round 2: Final Round</h3>
+      <ul class="page-list">
+        <li>○ 20 Multiple-Choice + 10 User-Input-Based Questions</li>
+        <li>○ Duration: 3 hours</li>
+        <li>○ Advanced real-world modeling, logic, and data challenges</li>
+        <li>○ Top performers receive national medals</li>
+      </ul>
+
+      <h3 class="page-subtitle">
+        Participants in the final round will be ranked as follows:
+      </h3>
+      <ul class="page-list">
+        <li>○ Top 10%: Gold Medal</li>
+        <li>○ Next 10%: Silver Medal</li>
+        <li>○ Next 10%: Bronze Medal</li>
+      </ul>
+
+      <h2 class="page-title">Syllabus & Sample Questions</h2>
+      <h3 class="page-subtitle">EAMO focuses on topics such as:</h3>
+      <ul class="page-list">
+        <li>○ Mathematical modeling</li>
+        <li>○ Real-World Problems</li>
+        <li>○ Optimization and scheduling</li>
+        <li>○ Statistics and interpretation</li>
+        <li>○ Logic and algorithmic thinking</li>
+        <li>○ Probability in real-life systems</li>
+        <li>○ Cost analysis, economics, and decision-making</li>
+      </ul>
+      <p class="page-paragraph">Sample Problems will be available soon!</p>
+
+      <h2 class="page-title">Olympiad Timeline</h2>
+      <ul class="page-list">
+        <li>○ Registration Opens -> 20th of June</li>
+        <li>○ Round 1 Competition Date -> 4th of July</li>
+        <li>○ Finalists Announced -> 10th of July</li>
+        <li>○ Round 2 Competition Date -> 20th of July</li>
+        <li>○ Medalists Announced -> End of July</li>
+      </ul>
+      <p class="page-paragraph">Sample Problems will be available soon!</p>
+
+      <h2 class="page-title">Registration</h2>
+      <a href="https://forms.gle/QGz1MppXQuH491RcA" target="_blank"><button class="primary-btn">Fill The Form</button></a>
+    </section>
+
+    <!-- Footer Section -->
+    <%- include('partials/footer.ejs') %>
+
+    <script
+      src="https://kit.fontawesome.com/82432b4eb3.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </body>
+</html>

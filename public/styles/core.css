@@ -187,6 +187,52 @@ section {
   font-size: 1.25rem;
 }
 
+#page-thumbnail {
+  height: 40vh;
+  border-radius: 0.5vw;
+  margin-bottom: 10vh;
+}
+
+#page-heading {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 800;
+  font-size: 2.6vw;
+  color: var(--secondary);
+  margin-bottom: 6vh;
+}
+
+.page-title {
+  font-family: "NTR", sans-serif;
+  font-size: 1.9vw;
+  width: 60%;
+  margin-bottom: 1vh;
+  margin-top: 10vh;
+}
+
+.page-subtitle {
+  font-family: "NTR", sans-serif;
+  font-size: 1.4vw;
+  width: 60%;
+  margin-bottom: 0.5vh;
+}
+
+.page-paragraph {
+  font-family: "Basic", sans-serif;
+  font-size: 1.1vw;
+  width: 60%;
+}
+
+.page-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  font-family: "Basic", sans-serif;
+  font-size: 1.1vw;
+  width: 60%;
+  padding-left: 4vw;
+  margin-bottom: 4vh;
+}
+
 ::selection {
   background: var(--primary);
   color: black;

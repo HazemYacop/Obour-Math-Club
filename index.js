@@ -64,7 +64,7 @@ app.get("/academics/grade-:grade/:lo", async (req, res, next) => {
   try {
     const { rows } = await db.query(
       `SELECT * FROM lectures WHERE grade = $1 AND lo_code = $2 LIMIT 1`,
-      [grade, lo.toUpperCase()],
+      [grade, lo.toUpperCase()]
     );
     if (!rows.length)
       return res.render("academics", {
@@ -91,7 +91,7 @@ app.get("/blogs", async (req, res, next) => {
       `SELECT slug, title, subtitle, description,
               icon_class, thumbnail
        FROM blogs
-       ORDER BY id DESC`,
+       ORDER BY id DESC`
     );
     res.render("blogs", { pageTitle: "Blogs", blogs });
   } catch (e) {
@@ -103,7 +103,7 @@ app.get("/blogs/:slug", async (req, res, next) => {
   try {
     const { rows } = await db.query(
       "SELECT * FROM blogs WHERE slug = $1 LIMIT 1",
-      [req.params.slug],
+      [req.params.slug]
     );
     if (!rows.length) return next();
     const blog = rows[0];
@@ -114,7 +114,7 @@ app.get("/blogs/:slug", async (req, res, next) => {
        WHERE slug <> $1
        ORDER BY id DESC
        LIMIT 3`,
-      [blog.slug],
+      [blog.slug]
     );
 
     res.render("blog", {
@@ -137,7 +137,7 @@ app.get("/contact-us", (req, res) => {
 app.get("/researches", async (req, res, next) => {
   try {
     const { rows: researches } = await db.query(
-      "SELECT slug, title, description, keywords, thumbnail FROM researches ORDER BY id",
+      "SELECT slug, title, description, keywords, thumbnail FROM researches ORDER BY id"
     );
     res.render("researches", { pageTitle: "Researches", researches });
   } catch (e) {
@@ -149,7 +149,7 @@ app.get("/researches/:slug", async (req, res, next) => {
   try {
     const { rows } = await db.query(
       "SELECT * FROM researches WHERE slug = $1 LIMIT 1",
-      [req.params.slug],
+      [req.params.slug]
     );
     if (!rows.length) return next();
     const research = rows[0];
@@ -160,7 +160,7 @@ app.get("/researches/:slug", async (req, res, next) => {
        WHERE slug <> $1
        ORDER BY id DESC
        LIMIT 3`,
-      [research.slug],
+      [research.slug]
     );
 
     res.render("research", {
@@ -176,7 +176,7 @@ app.get("/researches/:slug", async (req, res, next) => {
 app.get("/olympiads", async (req, res, next) => {
   try {
     const { rows: courses } = await db.query(
-      "SELECT id, title, description, slug FROM courses ORDER BY id",
+      "SELECT id, title, description, slug FROM courses ORDER BY id"
     );
 
     res.render("olympiads", {
@@ -198,7 +198,7 @@ app.get("/olympiads/:courseSlug", async (req, res, next) => {
     .query(
       `SELECT * FROM course_concepts
      WHERE course_id=$1 ORDER BY idx`,
-      [course.id],
+      [course.id]
     )
     .then((r) => r.rows);
 
@@ -222,7 +222,7 @@ app.get("/olympiads/:courseSlug/:conceptSlug", async (req, res, next) => {
     .query(
       `SELECT * FROM course_concepts
      WHERE course_id=$1 ORDER BY idx`,
-      [course.id],
+      [course.id]
     )
     .then((r) => r.rows);
 
@@ -285,7 +285,7 @@ app.post("/contact", async (req, res) => {
 
     await db.query(
       "CREATE TABLE IF NOT EXISTS messages (id SERIAL PRIMARY KEY, \
-        name TEXT, email TEXT, body TEXT, created_at TIMESTAMPTZ DEFAULT now())",
+        name TEXT, email TEXT, body TEXT, created_at TIMESTAMPTZ DEFAULT now())"
     );
     await db.query("INSERT INTO messages (name,email,body) VALUES ($1,$2,$3)", [
       name,
@@ -295,6 +295,12 @@ app.post("/contact", async (req, res) => {
 
     return res.redirect("/contact-us?msg=stored");
   }
+});
+
+app.get("/eamo", async (req, res) => {
+  res.render("eamo", {
+    pageTitle: "Egyptian Applied Mathematics Olympiad",
+  });
 });
 
 app.use((req, res) => {
@@ -309,6 +315,6 @@ export default app;
 // start local server when not running on Vercel
 if (!process.env.VERCEL) {
   app.listen(process.env.PORT, () =>
-    console.log(`Server running → http://localhost:${process.env.PORT}`),
+    console.log(`Server running → http://localhost:${process.env.PORT}`)
   );
 }
