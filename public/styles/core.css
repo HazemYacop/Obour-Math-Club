@@ -188,7 +188,7 @@ section {
 }
 
 #page-thumbnail {
-  height: 40vh;
+  width: 60vw;
   border-radius: 0.5vw;
   margin-bottom: 10vh;
 }
@@ -327,6 +327,39 @@ section {
     font-size: 2.8vw;
     padding: 0.9rem 1rem;
   }
+
+  #page-thumbnail {
+    width: 90vw;
+  }
+
+  #page-heading {
+    font-size: 7vw;
+    text-align: center;
+  }
+
+  .page-title {
+    font-size: 6vw;
+    width: 90%;
+    margin-bottom: 2vh;
+  }
+
+  .page-subtitle {
+    font-size: 5vw;
+    width: 90%;
+  }
+
+  .page-paragraph {
+    font-size: 3.2vw;
+    width: 90%;
+  }
+
+  .page-list {
+    gap: 3vh;
+    font-size: 3.2vw;
+    width: 90%;
+    padding-left: 10vw;
+    margin-bottom: 8vh;
+  }
 }
 
 @media (max-width: 480px) {
@@ -366,6 +399,30 @@ section {
   }
 
   .toast {
+    font-size: 4vw;
+  }
+  #page-thumbnail {
+    width: 90vw;
+  }
+
+  #page-heading {
+    font-size: 9vw;
+  }
+
+  .page-title {
+    font-size: 8vw;
+  }
+
+  .page-subtitle {
+    font-size: 7vw;
+  }
+
+  .page-paragraph {
+    font-size: 4vw;
+  }
+
+  .page-list {
+    gap: 2vh;
     font-size: 4vw;
   }
 }
